@@ -3,6 +3,8 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
+import { Meteor } from 'meteor/meteor';
+
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import template from './partiesList.html';
@@ -46,8 +48,18 @@ class PartiesList {
       },
       partiesCount() {
         return Counts.get('numberOfParties');
+      },
+      isLoggedIn() {
+        return !!Meteor.userId();
+      },
+      currentUserId() {
+        return Meteor.userId();
       }
     });
+  }
+
+  isOwner(party) {
+    return this.isLoggedIn && party.owner === this.currentUserId;
   }
 
   pageChanged(newPage) {
