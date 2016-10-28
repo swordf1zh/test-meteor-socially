@@ -24,3 +24,5 @@ velocity:console-reporter
 accounts-password
 dotansimha:accounts-ui-angular
 tmeasday:publish-counts
+check
+email
