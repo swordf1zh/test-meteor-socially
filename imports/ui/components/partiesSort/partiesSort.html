@@ -1,6 +1,10 @@
-<div>
-  <select ng-model="partiesSort.order" ng-change="partiesSort.changed()">
-    <option value="1">Ascending</option>
-    <option value="-1">Descending</option>
-  </select>
-</div>
+<md-input-container>
+  <md-select ng-model="partiesSort.order" ng-change="partiesSort.changed()">
+    <md-option value="1">
+      Ascending
+    </md-option>
+    <md-option value="-1">
+      Descending
+    </md-option>
+  </md-select>
+</md-input-container>

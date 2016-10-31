@@ -14,6 +14,11 @@ class PartyAdd {
   submit() {
     this.party.owner = Meteor.userId();
     Parties.insert(this.party);
+
+    if (this.done) {
+      this.done();
+    }
+
     this.reset();
   }
 
@@ -30,5 +35,8 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: PartyAdd
+  controller: PartyAdd,
+  bindings: {
+    done: '&?'
+  }
 });
