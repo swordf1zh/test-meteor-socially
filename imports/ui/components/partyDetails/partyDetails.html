@@ -21,7 +21,11 @@
         <md-button ng-click="partyDetails.save()" class="md-primary md-raised">Save</md-button>
       </div>
     </form>
+
+    <party-image images="partyDetails.party.images"></party-image>
+
     <party-map flex="50" location="partyDetails.party.location"></party-map>
+
   </div>
 
   <party-uninvited flex party="partyDetails.party" ng-show="partyDetails.canInvite()"></party-uninvited>

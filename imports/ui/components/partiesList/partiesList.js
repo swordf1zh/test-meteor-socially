@@ -3,9 +3,8 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import { Meteor } from 'meteor/meteor';
-
 import { Counts } from 'meteor/tmeasday:publish-counts';
+import { Meteor } from 'meteor/meteor';
 
 import template from './partiesList.html';
 import { Parties } from '/imports/api/parties';
@@ -16,6 +15,7 @@ import { name as PartyRemove } from '../partyRemove/partyRemove';
 import { name as PartyCreator } from '../partyCreator/partyCreator';
 import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpList } from '../partyRsvpList/partyRsvpList';
+import { name as PartyImage } from '../partyImage/partyImage';
 
 class PartiesList {
   constructor($scope, $reactive) {
@@ -39,6 +39,7 @@ class PartiesList {
     ]);
 
     this.subscribe('users');
+    //this.subscribe('images');
 
     this.helpers({
       parties() {
@@ -84,7 +85,8 @@ export default angular.module(name, [
   PartyRemove,
   PartyCreator,
   PartyRsvp,
-  PartyRsvpList
+  PartyRsvpList,
+  PartyImage
 ])
 .component(name, {
   template,

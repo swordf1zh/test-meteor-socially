@@ -39,8 +39,6 @@ class PartyMap {
   }
 
   setLocation(latitude, longitude) {
-    console.info('latitude', latitude);
-    console.info('longitude', longitude);
     this.location = { latitude, longitude };
   }
 }

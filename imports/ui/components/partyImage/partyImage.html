@@ -1,0 +1,5 @@
+<img ng-if="partyImage.onlyMainImage" ng-src="{{partyImage.mainImage.url}}"/>
+
+<div ng-if="!partyImage.onlyMainImage" ng-repeat="image in partyImage.allImages">
+  <img ng-src="{{image.url}}"/>
+</div>

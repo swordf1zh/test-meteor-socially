@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import template from './partyDetails.html';
 import { Parties } from '/imports/api/parties';
 import { name as PartyUninvited } from '../partyUninvited/partyUninvited';
+import { name as PartyImage } from '../partyImage/partyImage';
 import { name as PartyMap } from '../partyMap/partyMap';
 
 class PartyDetails {
@@ -75,6 +76,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   PartyUninvited,
+  PartyImage,
   PartyMap
 ])
 .component(name, {
